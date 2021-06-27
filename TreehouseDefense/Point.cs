@@ -2,7 +2,7 @@ using System;
 
 namespace TreehouseDefense
 {
-    class Point
+    public class Point
     {
         public readonly int X;
         public readonly int Y;
@@ -20,7 +20,7 @@ namespace TreehouseDefense
 
         public override bool Equals(object obj)
         {
-            if(!(obj is Point))
+            if (!(obj is Point))
             {
                 return false;
             }
@@ -36,10 +36,10 @@ namespace TreehouseDefense
         }
 
         public int DistanceTo(int x, int y)
-        {     
-            return (int)Math.Sqrt(Math.Pow(X-x, 2) + Math.Pow(Y-y, 2));
+        {
+            return (int)Math.Sqrt(Math.Pow(X - x, 2) + Math.Pow(Y - y, 2));
         }
-    
+
         public int DistanceTo(Point point)
         {
             return DistanceTo(point.X, point.Y);
