@@ -1,39 +1,22 @@
-using System;
+﻿using System;
+using System.Linq;
+using TreehouseDefense;
 
-namespace TreehouseDefense
+public class Path
 {
-    public class Path
+    private MapLocation[] _path;
+
+    public int Length { get; internal set; }
+
+    public Path(MapLocation[] pathLocations)
     {
-        private readonly MapLocation[] _path;
+        this._path = pathLocations;
+    }
 
-        public int Length => _path.Length;
+    public bool IsOnPath(MapLocation mapLocation) => _path.Contains(mapLocation);
 
-        public Path(MapLocation[] path)
-        {
-            _path = path;
-        }
-
-        public MapLocation GetLocationAt(int pathStep)
-        {
-            return (pathStep < _path.Length) ? _path[pathStep] : null;
-        }
-
-        public bool IsOnPath(MapLocation location)
-        {
-
-
-            //return Array.IndexOf(pathLocations, mapLocation) >= 0;
-
-
-            //foreach (var pathLocation in _path)
-            //{
-            //    if (location.Equals(pathLocation))
-            //    {
-            //        return true;
-            //    }
-            //}
-
-            //return false;
-        }
+    internal MapLocation GetLocationAt(int pathStep)
+    {
+        throw new NotImplementedException();
     }
 }
